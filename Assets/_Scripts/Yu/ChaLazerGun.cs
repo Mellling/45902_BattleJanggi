@@ -9,7 +9,7 @@ public class ChaLazerGun : Weapon
     [SerializeField] LayerMask layerMask;
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] ParticleSystem hitEffect;
-
+     
     [SerializeField] Transform hitPoint;
 
     public override void Fire()
