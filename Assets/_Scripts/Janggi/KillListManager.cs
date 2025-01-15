@@ -28,28 +28,28 @@ public class KillListManager : Singleton<KillListManager>
         hanImage = new Image[15];
         choImage = new Image[15];
 
+        InitializeImageArray(hanImage, hanFirst, hanSecond);    // 한나라 Kill 이미지 관리 배열 초기화
+        InitializeImageArray(choImage, choFirst, choSecond);    // 초나라 Kill 이미지 관리 배열 초기화
+    }
+
+    /// <summary>
+    /// Lill List의 장기말 이미지를 이를 관리하는 배열에 넣기 위한 메서드
+    /// </summary>
+    /// <param name="whoesImage">각 나라의 이미지 관리하는 배열</param>
+    /// <param name="firstImageBox">UI 첫번째 줄 장기말 이미지가 담긴 오브젝트</param>
+    /// <param name="secondImageBox">UI 두번째 줄 장기말 이미지가 담긴 오브젝트</param>
+    private void InitializeImageArray(Image[] whoesImage, GameObject firstImageBox, GameObject secondImageBox)
+    {
         int count = 0;
 
-        foreach (Image image in hanFirst.transform.GetComponentsInChildren<Image>())
+        foreach (Image image in firstImageBox.transform.GetComponentsInChildren<Image>())
         {
-            hanImage[count++] = image;
+            whoesImage[count++] = image;
         }
 
-        foreach (Image image in hanSecond.transform.GetComponentsInChildren<Image>())
+        foreach (Image image in secondImageBox.transform.GetComponentsInChildren<Image>())
         {
-            hanImage[count++] = image;
-        }
-
-        count = 0;
-
-        foreach (Image image in choFirst.transform.GetComponentsInChildren<Image>())
-        {
-            choImage[count++] = image;
-        }
-
-        foreach (Image image in choSecond.transform.GetComponentsInChildren<Image>())
-        {
-            choImage[count++] = image;
+            whoesImage[count++] = image;
         }
     }
 
